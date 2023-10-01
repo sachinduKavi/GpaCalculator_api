@@ -1,0 +1,24 @@
+{
+  "name": "gpa_calculator",
+  "version": "0.2.0",
+  "description": "calculate your university GPA value",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "Calculator",
+    "GPA",
+    "GPA",
+    "Calculator"
+  ],
+  "author": "Sachindu Kavishka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.5.3",
+    "nodemon": "^3.0.1"
+  }
+}
