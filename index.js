@@ -2,9 +2,9 @@ const PORT = 3000;
 const express = require('express');
 const app = express();
 
-const mongoose = require('./mongoGB_database')
+const mongoose = require('./src/mongoGB_database')
 
-const userRouter = require('./routes/Users');
+const userRouter = require('./src/routes/Users');
 
 
 
