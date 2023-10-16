@@ -41,7 +41,7 @@ const userAuthorization = async (req, res) => {
     const email = req.params.email;
     const pass = req.params.pass;
 
-    const response = await Users.find({"email": email}, {email: 1, password:1});
+    const response = await Users.find({"email": email}, {email: 1, password:1, degree:1});
     console.log("results:", response.length);
     if(response.length > 0){
         var authorized, statusCode, message;
