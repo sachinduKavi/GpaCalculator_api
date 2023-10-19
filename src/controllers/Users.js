@@ -1,15 +1,8 @@
 const mongoose = require('../mongoGB_database');
 
+const { Users } = require('../model');
 
-const Users = mongoose.model('Users', {
-    userName: String,
-    email: String,
-    password: String,
-    university: String,
-    degree: String,
-    score: Object
-    
-}, "Users");
+
 
 const addUserDetails = async (req, res) => {
     var status, code;

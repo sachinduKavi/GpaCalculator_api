@@ -6,6 +6,8 @@ const mongoose = require('./src/mongoGB_database')
 
 const userRouter = require('./src/routes/Users');
 
+const resultRouter = require('./src/routes/Results');
+
 
 
 app.use(express.json());
@@ -19,6 +21,8 @@ mongoDB.once('open', () => {
 
 
 app.use('/users', userRouter);
+
+app.use('/results', resultRouter);
 
 
 
