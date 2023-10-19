@@ -24,7 +24,8 @@ const uploadResults = async (req, res) => {
     }).catch(e => {
         console.log("Error ", e);
         res.status(404).json({
-            status: e
+            status: "error",
+            message: e
         });
     });
 
@@ -34,7 +35,19 @@ const uploadResults = async (req, res) => {
 };
 
 
+const downloadResults = async (req, res) => {
+    console.log("Downloading Results...");
+    
+    const userEmail = req.body['user_email'];
+    
+    const results = await Users.findOne({email:userEmail}, {email:1, result:1});
+    console.log(results);
+    res.status(200).json(results);
+ }
+
+
 
 module.exports ={
-    uploadResults
+    uploadResults,
+    downloadResults
 }
