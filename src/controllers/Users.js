@@ -59,9 +59,22 @@ const userAuthorization = async (req, res) => {
     })
 }
 
+const getUserDetails = async (req, res) => {
+    const userEmail = req.body['user_email'];
+    console.log("User email : ", userEmail);
+
+    const results = await Users.findOne({'email': userEmail}, {'result': 0});
+    console.log("Results ", results);
+
+    res.status(200).json({
+        results
+    });
+}
+
 
 
 module.exports = {
     addUserDetails,
-    userAuthorization
+    userAuthorization,
+    getUserDetails
 };
