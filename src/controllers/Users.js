@@ -72,9 +72,35 @@ const getUserDetails = async (req, res) => {
 }
 
 
+const editUser = async (req, res) => {
+    console.log("Edit user");
+    const userEmail = req.body['user_email'];
+    const key = req.body['key'];
+    const newValue = req.body['new_value'];
+
+    const results = await Users.findOne({'email': userEmail}, {'result': 0});
+    console.log("Results : ", results);
+
+    results[key] = newValue;
+    results.save().then(result => {
+        res.status(201).json(result);
+    }).catch(err => {
+        res.status.json(
+            {
+                error: e
+            }
+        )
+    });
+
+    
+
+}
+
+
 
 module.exports = {
     addUserDetails,
     userAuthorization,
-    getUserDetails
+    getUserDetails,
+    editUser
 };
