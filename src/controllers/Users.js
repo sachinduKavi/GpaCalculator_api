@@ -14,6 +14,7 @@ const addUserDetails = async (req, res) => {
             password: req.body['password'],
             university: req.body['university'],
             degree: req.body['degree'],
+            mobile: req.body['mobile']
         }
     ).then(success => {
         status = "Success";
