@@ -6,7 +6,6 @@ const { Users } = require('../model');
 
 const addUserDetails = async (req, res) => {
     var status, code;
-    console.log("Add new user...");
     await Users.insertMany(
         {
             userName: req.body['userName'],
@@ -32,6 +31,7 @@ const addUserDetails = async (req, res) => {
 };
 
 const userAuthorization = async (req, res) => {
+    console.log('Hello user ')
     const email = req.params.email;
     const pass = req.params.pass;
 
